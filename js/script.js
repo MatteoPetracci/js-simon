@@ -15,7 +15,14 @@ var numPc = getRndNumber(1,100);
 var sameNumber = checkArrayNumber(numRandomArray, numPc);
 numRandomArray.push(numPc);
 }
-console.log(numRandomArray);
+// console.log(numRandomArray);
+// Creare Un alert che espone i 5 numeri casuali generati dal Pc
+
+alert(numRandomArray);
+
+// Far partire un timer di 30 secondi ora provo con 3s per comodità
+
+setTimeout(timer, 3000);
 
 // Creare funziona che genera un numero random con numero minimo e massimo compresi
 
@@ -35,3 +42,14 @@ function checkArrayNumber(array, number) {
    }
    return false;
  }
+
+
+function timer() {
+  var number = [];
+  for (var i = 0; i < 5; i++) {
+    var numUser = parseInt(prompt('Quali numeri hai visto?'));
+    var sameNumber = checkArrayNumber(numRandomArray, numUser);
+    number.push(numUser);
+    console.log(number);
+  }
+}
