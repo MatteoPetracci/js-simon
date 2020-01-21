@@ -41,7 +41,7 @@ setTimeout(function() {
     }
   }
   alert("Hai indovinato i seguenti numeri" + " " + userNumber);
-}, 3000);
+}, 30000);
 
 // Creare funziona che genera un numero random con numero minimo e massimo compresi
 
