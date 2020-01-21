@@ -38,9 +38,9 @@ setTimeout(function() {
     if (checkArrayNumber(numRandomArray, number[i])) {
       userNumber.push(number[i]);
       // console.log(userNumber[i]);
-      alert("Hai indovinato i seguenti numeri" + " " + userNumber);
-    } 
+    }
   }
+  alert("Hai indovinato i seguenti numeri" + " " + userNumber);
 }, 3000);
 
 // Creare funziona che genera un numero random con numero minimo e massimo compresi
