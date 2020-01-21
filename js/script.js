@@ -15,14 +15,33 @@ var numPc = getRndNumber(1,100);
 var sameNumber = checkArrayNumber(numRandomArray, numPc);
 numRandomArray.push(numPc);
 }
-// console.log(numRandomArray);
+console.log(numRandomArray);
 // Creare Un alert che espone i 5 numeri casuali generati dal Pc
 
 alert(numRandomArray);
 
-// Far partire un timer di 30 secondi ora provo con 3s per comodità
+// Far partire un timer di 30 secondi con setTimeout dove passo due argomenti il primo la funzione con due cicli for. nel primo ciclo pusho in un array i numeri inseriti dall'utente nel secondo ciclo inserisco in un array vuoto i numeri che sono uguali tra i numeri generati dal pc e i numeri dell'utente. nel secondo argomento inserisco in ms il tempo che deve trascorrere
 
-setTimeout(timer, 3000);
+var numUser = 0;
+var number = [];
+var userNumber = [];
+var sameNumber;
+
+setTimeout(function() {
+  for (var i = 0; i < 5; i++) {
+    numUser = parseInt(prompt('Quali numeri hai visto?'));
+    sameNumber = checkArrayNumber(numRandomArray, numUser);
+    number.push(numUser);
+    // console.log(number);
+  }
+  for (var i = 0; i < number.length; i++) {
+    if (checkArrayNumber(numRandomArray, number[i])) {
+      userNumber.push(number[i]);
+      // console.log(userNumber[i]);
+      alert("Hai indovinato i seguenti numeri" + " " + userNumber);
+    } 
+  }
+}, 3000);
 
 // Creare funziona che genera un numero random con numero minimo e massimo compresi
 
@@ -42,14 +61,3 @@ function checkArrayNumber(array, number) {
    }
    return false;
  }
-
-
-function timer() {
-  var number = [];
-  for (var i = 0; i < 5; i++) {
-    var numUser = parseInt(prompt('Quali numeri hai visto?'));
-    var sameNumber = checkArrayNumber(numRandomArray, numUser);
-    number.push(numUser);
-    console.log(number);
-  }
-}
